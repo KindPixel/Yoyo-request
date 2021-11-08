@@ -4,32 +4,29 @@
     <meta charset="utf-8">
     <title>Yoyo's request</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="process.js"></script>
 </head>
 
 <body>
     <div class="asking-box">
         <h2>Ask for the stupid show u don't want to pay for :)</h2>
-        <form id="idForm" action >
+        <form id="idForm" action="save.php" method="POST">
+            <div class="user-box" id="name-group">
+                <input type="text" name="name" id="name">
+                <label for="name">Ur Name</label>
+            </div>
             <div class="user-box">
-            <input type="text" name="name" required="">
-            <label>Ur Name</label>
-        </div>
-        <div class="user-box">
-            <input type="text" name="request" required="">
-            <label>Ur request</label>
-        </div>
-        <input type="button" id="submit" value="click" onClick="submit(this.form)">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-        </input>
+                <input type="text" name="request" id="request">
+                <label for="request">Ur request</label>
+            </div>
+            <a type="submit">
+                <span></span><span></span><span></span><span></span>  
+                Submit
+            </a>
         </form>
     </div>
 </body>
 
-<script type="text/javascript" src="process.js"></script>
+
 </html>
