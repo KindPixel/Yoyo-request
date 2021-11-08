@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("form").submit(function (event) {
       var formData = {
         name: $("#name").val(),
-        email: $("#request").val(),
+        request: $("#request").val(),
       };
   
       $.ajax({
