@@ -16,7 +16,7 @@ $(document).ready(function() {
 		var password = $('#password').val();
 		if(name!="" && email!="" && phone!="" && password!="" ){
 			$.ajax({
-				url: "save.php",
+				url: "../phpScripts/loginsave.php",
 				type: "POST",
 				data: {
 					type: 1,
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		var password = $('#password_log').val();
 		if(email!="" && password!="" ){
 			$.ajax({
-				url: "save.php",
+				url: "../phpScripts/loginsave.php",
 				type: "POST",
 				data: {
 					type:2,
