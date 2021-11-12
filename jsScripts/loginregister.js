@@ -7,6 +7,7 @@ $(document).ready(function() {
 		$("#register_form").show();
 		$("#login_form").hide();
 	});
+
 	$('#butsave').on('click', function() {
 		$("#butsave").attr("disabled", "disabled");
 		var name = $('#name').val();
@@ -28,16 +29,17 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
+                    //console.log(dataResult);
+					//var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');
 						$("#success").show();
 						$('#success').html('Registration successful !'); 						
 					}
-					else if(dataResult.statusCode==201){
+					else if(dataResult.statusCode==201) {
 						$("#error").show();
-						$('#error').html('Email ID already exists !');
+						$('#error').html('something went wrong :/');
 					}
 					
 				}
@@ -61,13 +63,14 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
+					//var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
-						location.href = "welcome.php";						
+						location.href = "../index.html";	
+                        alert("it wroks");					
 					}
 					else if(dataResult.statusCode==201){
 						$("#error").show();
-						$('#error').html('Invalid EmailId or Password !');
+						$('#error').html('Invalid Email or Password !');
 					}
 					
 				}

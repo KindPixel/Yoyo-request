@@ -1,5 +1,5 @@
 <?php
-	include '../database/database.php';
+	require '../database/database.php';
 	session_start();
 	if($_POST['type']==1){
 		$name=$_POST['name'];
@@ -15,7 +15,7 @@
 		}
 		else{
 			$sql = "INSERT INTO `crud`( `name`, `email`, `phone`, `city`, `password`) 
-			VALUES ('$name','$email','$phone','$city', '$password')";
+			VALUES ('$name','$email',$phone,'$city', '$password')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));
 			} 
