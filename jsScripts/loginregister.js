@@ -31,6 +31,8 @@ $(document).ready(function() {
 				success: function(dataResult){
                     //console.log(dataResult);
 					var dataResult = dataResult;
+					alert(dataResult);
+
 					if(dataResult.statusCode==200){
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');

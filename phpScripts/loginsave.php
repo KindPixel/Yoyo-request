@@ -20,7 +20,7 @@
 				echo json_encode(array("statusCode"=>200));
 			} 
 			else {
-				echo json_encode(array("statusCode"=>201));
+				echo json_encode(array("statusCode"=>202));
 			}
 		}
 		mysqli_close($conn);
@@ -33,13 +33,11 @@
 		$checkNum = mysqli_num_rows($check);
 
         print_r($checkNum);
-       
-		if ($check)
-		{
+		if ($check) {
 			$_SESSION['email']=$email;
 			echo json_encode(array("statusCode"=>200));
 		}
-		else if(!$check){
+		else if(!$check) {
 			echo json_encode(array("statusCode"=>201));
 		}
 		mysqli_close($conn);
