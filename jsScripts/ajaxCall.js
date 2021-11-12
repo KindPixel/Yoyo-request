@@ -7,7 +7,7 @@ $(document).ready(function () {
   
       $.ajax({
         type: "POST",
-        url: "./phpScripts/save.php",
+        url: "./phpScripts/yoyorequestsave.php",
         data: formData,
         dataType: "json",
         encode: true,
