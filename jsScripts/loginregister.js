@@ -30,7 +30,7 @@ $(document).ready(function() {
 				cache: false,
 				success: function(dataResult){
                     //console.log(dataResult);
-					//var dataResult = JSON.parse(dataResult);
+					var dataResult = dataResult;
 					if(dataResult.statusCode==200){
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');
@@ -41,7 +41,9 @@ $(document).ready(function() {
 						$("#error").show();
 						$('#error').html('something went wrong :/');
 					}
-					
+					else {
+                        alert("error");
+                    }
 				}
 			});
 		}
@@ -63,10 +65,10 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					//var dataResult = JSON.parse(dataResult);
+					var dataResult = dataResult;
 					if(dataResult.statusCode==200){
-						location.href = "../index.html";	
-                        alert("it wroks");					
+						location.href = "../index.html";
+                        alert("it works ?");					
 					}
 					else if(dataResult.statusCode==201){
 						$("#error").show();

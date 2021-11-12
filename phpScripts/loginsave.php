@@ -29,14 +29,27 @@
 		$email=$_POST['email'];
 		$password=$_POST['password'];
 		$check=mysqli_query($conn,"select * from crud where email='$email' and password='$password'");
-		if (mysqli_num_rows($check)>0)
+        
+		$checkNum = mysqli_num_rows($check);
+
+        print_r($checkNum);
+       
+		if ($check)
 		{
 			$_SESSION['email']=$email;
 			echo json_encode(array("statusCode"=>200));
 		}
-		else{
+		else if(!$check){
 			echo json_encode(array("statusCode"=>201));
 		}
 		mysqli_close($conn);
 	}
+		
+        //
+        // $check=mysqli_query($conn,"select * from crud where email='thomas.lima@viacesi.fr' and password='thomas78'");
+        // // print_r($check);
+        // //print_r(mysqli_num_rows($check));
+        // if (mysqli_num_rows($check) == 1) {
+        //     var_dump($check);
+        // }
 ?>
