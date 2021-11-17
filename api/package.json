@@ -1,0 +1,15 @@
+{
+  "name": "yoyo_site_api",
+  "version": "0.0.1",
+  "description": "API for mongo to website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kvendev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.4"
+  }
+}
