@@ -9,7 +9,7 @@
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
+<?php session_start();?>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-3">
     <div class="container-fluid">
@@ -41,7 +41,7 @@
                     <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php"><?php echo $_SESSION?></i></a>
+                    <a class="nav-link" href="login.php"><?php echo $_SESSION['email']; ?></i></a>
                 </li>
                
             </ul>

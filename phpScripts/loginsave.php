@@ -37,7 +37,8 @@
 
 		if ($checkNum==1) {
 			session_start();
-			$_SESSION['email']=$email;
+			$_SESSION['email']='yoyo';
+			print_r($_SESSION);
 			echo 200;
 		}
 		else {
