@@ -9,7 +9,10 @@
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<?php session_start();?>
+<?php if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+    // session isn't started
+    session_start();
+}?>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-3">
     <div class="container-fluid">
@@ -27,7 +30,7 @@
                     <a class="nav-link" href="askuryoyo.html">Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" action="killsession.php">killsession</a>
+                    <button class="nav-link btn" action="../phpScripts/killsession.php">killsession</button>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -37,13 +40,18 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php"><?php echo $_SESSION['email']; ?></i></a>
-                </li>
-               
+                <?php if(!isset($_SESSION)) {
+                    echo'
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
+                    </li>';
+                }
+                else {
+                    echo'<li class="nav-item">
+                    <a class="nav-link" href="">Ur connected</i></a>
+                    </li>';
+                }
+                ?>              
             </ul>
 
             
