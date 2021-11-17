@@ -27,7 +27,7 @@
                     <a class="nav-link" href="askuryoyo.html">Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Disabled</a>
+                    <a class="nav-link" action="killsession.php">killsession</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -40,6 +40,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"><?php echo $_SESSION?></i></a>
+                </li>
+               
             </ul>
 
             

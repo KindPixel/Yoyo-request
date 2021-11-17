@@ -31,19 +31,16 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					console.log(dataResult);
-					
-					console.log();
-					
-					if(dataResult==200){
+					statusCode = dataResult.substr(dataResult.length - 3);
+					if(statusCode==200){
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');
 						$("#success").show();
 						$('#success').html('Registration successful !'); 						
 					}
-					else if(dataResult==201) {
+					else if(statusCode==201) {
 						$("#error").show();
-						$('#error').html('something went wrong :/');
+						$('#error').html('Tyhis email is already registered :/');
 					}
 					else {
                         alert("error");
@@ -69,11 +66,12 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					console.log(dataResult);
-					if(dataResult==200){
-						location.href = "../htmldisplay/index.php";                        					
+					statusCode = dataResult.substr(dataResult.length - 3);
+					if(statusCode==200){
+						console.log("sucess");  
+						document.location.href = "../htmldisplay/index.php";                 					
 					}
-					if(dataResult==201){
+					if(statusCode==201){
 						$("#error").show();
 						$('#error').html('Invalid Email or Password !');
 					}					

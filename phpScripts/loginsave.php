@@ -36,6 +36,7 @@
 		$checkNum = mysqli_num_rows($check);
 
 		if ($checkNum==1) {
+			session_start();
 			$_SESSION['email']=$email;
 			echo 200;
 		}
