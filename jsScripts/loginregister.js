@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
 	$('#login').on('click', function() {
 		$("#login_form").show();
 		$("#register_form").hide();
@@ -29,17 +31,17 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-                    //console.log(dataResult);
-					var dataResult = dataResult;
-					alert(dataResult);
-
-					if(dataResult.statusCode==200){
+					console.log(dataResult);
+					
+					console.log();
+					
+					if(dataResult==200){
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');
 						$("#success").show();
 						$('#success').html('Registration successful !'); 						
 					}
-					else if(dataResult.statusCode==201) {
+					else if(dataResult==201) {
 						$("#error").show();
 						$('#error').html('something went wrong :/');
 					}
@@ -67,16 +69,14 @@ $(document).ready(function() {
 				},
 				cache: false,
 				success: function(dataResult){
-					var dataResult = dataResult;
-					if(dataResult.statusCode==200){
-						location.href = "../index.html";
-                        alert("it works ?");					
+					console.log(dataResult);
+					if(dataResult==200){
+						location.href = "../htmldisplay/index.php";                        					
 					}
-					else if(dataResult.statusCode==201){
+					if(dataResult==201){
 						$("#error").show();
 						$('#error').html('Invalid Email or Password !');
-					}
-					
+					}					
 				}
 			});
 		}
