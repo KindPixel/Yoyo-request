@@ -32,7 +32,7 @@ $(document).ready(function() {
 				cache: false,
 				success: function(dataResult){
 					statusCode = dataResult.substr(dataResult.length - 3);
-					if(statusCode==200){
+					if(statusCode==200) {
 						$("#butsave").removeAttr("disabled");
 						$('#register_form').find('input:text').val('');
 						$("#success").show();

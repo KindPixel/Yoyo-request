@@ -4,7 +4,7 @@
 <script type="text/javascript" src="../jsScripts/loginregister.js"></script>
 
 
-<div style="margin:auto;margin-top: 10%;width: 60%;">
+<div style="margin:auto;margin-top: 10%;width: 60%;" class="askuryoyo">
 
 
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">

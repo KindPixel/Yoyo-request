@@ -14,7 +14,7 @@
     session_start();
 }?>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark py-3">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark py-1">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">YOYO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="askuryoyo.html">Link</a>
                 </li>
-                <li class="nav-item">
-                    <button class="nav-link btn" action="../phpScripts/killsession.php">killsession</button>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown03">
@@ -40,7 +37,7 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <?php if(!isset($_SESSION)) {
+                <?php if(!isset($_SESSION['email'])) {
                     echo'
                     <li class="nav-item">
                         <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
