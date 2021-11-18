@@ -1,8 +1,5 @@
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+BODY {
   background: linear-gradient(#141e30, #243b55);
 }
 
@@ -34,6 +31,29 @@ body {
 }
 /* --------------------------------------------------- */
 
-.askuryoyo {
-  margin-top:20%;
+.registerbox {
+  margin:auto;
+  margin-top: 5%;
+  width: 60%;
+}
+
+.registerbox input{
+  margin:10px;
+}
+
+.registerbox label{
+  color:white;
+}
+
+.loginbox {
+  margin:auto;
+  width: 60%;
+}
+
+.loginbox label{
+  color:white;
+}
+
+.loginbox input{
+  margin:10px;
 }

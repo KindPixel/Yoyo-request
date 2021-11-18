@@ -4,8 +4,7 @@
 <script type="text/javascript" src="../jsScripts/loginregister.js"></script>
 
 
-<div style="margin:auto;margin-top: 10%;width: 60%;" class="askuryoyo">
-
+<div class="registerbox">
 
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -14,9 +13,9 @@
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
 
-	<button type="button" class="btn btn-success btn-sm" id="register">Register</button> <button type="button" class="btn btn-success btn-sm" id="login">Login</button>
+	<button style="margin:10px;" type="button" class="btn btn-success btn-sm" id="register">Register</button> <button type="button" class="btn btn-success btn-sm" id="login">Login</button>
 	
-	<form id="register_form" name="form1" method="post">
+	<form id="register_form" name="form1" method="post" style="display:none;">
 		<div class="form-group">
 			<label for="email">Name:</label>
 			<input type="text" class="form-control" id="name" placeholder="Name" name="name">
@@ -37,10 +36,14 @@
 			<label for="pwd">Password:</label>
 			<input type="password" class="form-control" id="password" placeholder="Password" name="password">
 		</div>
-		<input type="button" name="save" class="btn btn-primary" value="Register" id="butsave">
+		<input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Register" id="butsave">
 	</form>
 
-	<form id="login_form" name="form1" method="post" style="display:none;">
+</div>
+
+<div class="loginbox">
+
+	<form id="login_form" name="form1" method="post">
 		
 		<div class="form-group">
 			<label for="pwd">Email:</label>

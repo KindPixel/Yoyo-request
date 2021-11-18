@@ -5,10 +5,10 @@
     <title>Home page</title>
 </head>
 
-
+<?php include("navbar.php") ?>
 
 <body>
-<?php include("navbar.php") ?>
+<h1>WELCOME</h1>
 </body>
 
 
