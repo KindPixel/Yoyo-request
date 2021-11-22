@@ -62,3 +62,10 @@ body {
 .loginbox input{
   margin:10px;
 }
+
+/* ------------ askuryoyo ------------*/
+
+.asking-box {
+  margin:auto;
+  width:60%;
+}

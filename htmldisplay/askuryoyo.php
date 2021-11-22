@@ -2,20 +2,12 @@
     <?php include('./navbar.php');?>
 
 
-    <div class="asking-box">
-        <h2>Ask for the stupid show u don't want to pay for :)</h2>
-        <form id="idForm" action="save.php" method="POST">
-            <div class="user-box" id="name-group">
-                <input type="text" name="name" id="name">
-                <label for="name">Ur Name</label>
-            </div>
-            <div class="user-box">
-                <input type="text" name="request" id="request">
-                <label for="request">Ur request</label>
-            </div>
-            <button type="submit" class="btn btn-success">
-                Submit
-            </button>
-        </form>
+<form>
+    <div class="form-group asking-box">
+        <label for="exampleInputEmail1">Ur requested movie</label>
+        <input type="" class="form-control" id="request">
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 </body>

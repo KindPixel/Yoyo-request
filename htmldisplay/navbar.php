@@ -30,7 +30,7 @@
                     <a class="nav-link" href="askuryoyo.php">Ask ur yoyo</a>
                 </li>
                 
-                <?php if(!isset($_SESSION['email'])) {
+                <?php if(!isset($_SESSION['name'])) {
                     echo'
                     <li class="nav-item">
                         <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>
@@ -38,10 +38,14 @@
                 }
                 else {
                     echo'<li class="nav-item">
-                    <a class="nav-link" href="">Ur connected as ',$_SESSION['name'],'</i></a>
+                    <a class="nav-link" href="">Ur connected as : ',ucfirst($_SESSION['name']),'</i></a>
+                    </li>';
+                    
+                    echo'<li class="nav-item">
+                    <a class="nav-link" href="../phpScripts/destroysession.php"><i class="fas fa-sign-out-alt"></i></a>
                     </li>';
                 }
-                ?>              
+                ?>
             </ul>
 
             

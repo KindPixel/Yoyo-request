@@ -57,6 +57,7 @@
 				session_start();
 				$_SESSION['email']=$email;
 				$_SESSION['name']=$users['name'];
+				$_SESSION['id']=$users['id'];
 				echo 200;
 			}
 			else {
