@@ -15,8 +15,12 @@
     $request->bindParam(":request", $asked, PDO::PARAM_STR);
 
 
-
-    if ($request->execute()) {
+    if(!isset($_SESSION['name'])) {
+        echo 201;
+        $request=null;
+    }
+    else {
+        if ($request->execute()) {
         echo 200;
         $request=null;
     } 
@@ -24,5 +28,7 @@
         echo 201;
         $request=null;
     }
+    }
+    
 
 ?>

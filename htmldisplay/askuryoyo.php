@@ -16,7 +16,7 @@
                 <input type="" class="form-control" id="request" placeholder="example : Iron man 2009">
             </div>
             <br>
-            <input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Register" id="submit-request">
+            <input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Submit" id="submit-request">
         </form>
 
         <div class="alert alert-success alert-dismissible" id="success" style="display:none;">

@@ -19,7 +19,7 @@ $(document).ready(function() {
 					}
 					if(statusCode==201){
                         $("#error").show();
-						$('#error').html('something went wrong :/');
+						$('#error').html('Log urself in before submiting a request');
 					}					
 				}
 			});

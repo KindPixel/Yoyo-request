@@ -20,6 +20,10 @@ body {
   line-height: 80px;
 }
 
+.navbar i {
+  margin-top: 7px;
+}
+
 .navbar-toggle {
   /* (80px - button height 34px) / 2 = 23px */
   margin-top: 23px;
