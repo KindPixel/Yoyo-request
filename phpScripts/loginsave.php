@@ -8,6 +8,7 @@
 		$phone=$_POST['phone'];
 		$city=$_POST['city'];
 		$password=$_POST['password'];
+		$hash = password_hash($password, PASSWORD_DEFAULT);
 		
 		$request = $pdo->prepare("select * from crud where email=:email");
 		$request->bindParam(":email", $email, PDO::PARAM_STR, 100);
@@ -27,7 +28,7 @@
 			$request->bindParam(":email", $email, PDO::PARAM_STR, 100);
 			$request->bindParam(":phone", $phone, PDO::PARAM_STR, 100);
 			$request->bindParam(":city", $city, PDO::PARAM_STR, 100);
-			$request->bindParam(":password", $password, PDO::PARAM_STR, 12);
+			$request->bindParam(":password", $hash, PDO::PARAM_STR, 100);
 
 			if ($request->execute()) {
 				echo 200;
@@ -46,21 +47,21 @@
 	if($_POST['type']==2){
 		$email=$_POST['email'];
 		$password=$_POST['password'];
+		$hash = password_hash($password, PASSWORD_DEFAULT);
 
-		$request = $pdo->prepare("select * from crud where email=:email and password=:password");
+		$request = $pdo->prepare("select * from crud where email=:email");
 		$request->bindParam(":email", $email, PDO::PARAM_STR, 100);
-		$request->bindParam(":password", $password, PDO::PARAM_STR, 12);
 		$request->execute();
-		$rownumber = count($request->fetchAll());
-
-		if ($rownumber==1) {
-			session_start();
-			$_SESSION['email']=$email;
-			echo 200;
-		}
-		else {
-			echo 201;
-		}
+		$users = $request->fetch(PDO::FETCH_ASSOC);
+			if (password_verify($password, $users['password'])) {
+				session_start();
+				$_SESSION['email']=$email;
+				$_SESSION['name']=$users['name'];
+				echo 200;
+			}
+			else {
+				echo 201;
+			}
 		$request = null;
 	}
 ?>

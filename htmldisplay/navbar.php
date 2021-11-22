@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="askuryoyo.html">Ask ur yoyo</a>
+                    <a class="nav-link" href="askuryoyo.php">Ask ur yoyo</a>
                 </li>
                 
                 <?php if(!isset($_SESSION['email'])) {
@@ -38,7 +38,7 @@
                 }
                 else {
                     echo'<li class="nav-item">
-                    <a class="nav-link" href="">Ur connected</i></a>
+                    <a class="nav-link" href="">Ur connected as ',$_SESSION['name'],'</i></a>
                     </li>';
                 }
                 ?>              

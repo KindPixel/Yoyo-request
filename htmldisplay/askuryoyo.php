@@ -1,4 +1,7 @@
 <body>
+    <?php include('./navbar.php');?>
+
+
     <div class="asking-box">
         <h2>Ask for the stupid show u don't want to pay for :)</h2>
         <form id="idForm" action="save.php" method="POST">
@@ -16,13 +19,3 @@
         </form>
     </div>
 </body>
-
-<head>
-    <meta charset="utf-8">
-    <title>Yoyo's request</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="shortcut icon" type="image/jpg" href="./resources/favicon.ico"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./jsScripts/ajaxCall.js"></script>
-</head>
