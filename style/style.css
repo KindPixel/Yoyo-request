@@ -1,8 +1,13 @@
-
-BODY {
-  background: linear-gradient(#141e30, #243b55);
+html {
+  height: 100%; 
 }
-
+body {
+  background: linear-gradient(#141e30, #243b55);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /* --------------------navbar------------------------- */
 .navbar {

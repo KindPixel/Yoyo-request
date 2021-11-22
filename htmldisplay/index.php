@@ -8,7 +8,7 @@
 <?php include("navbar.php") ?>
 
 <body>
-<h1>WELCOME</h1>
+<p>WELCOME</p>
 </body>
 
 
