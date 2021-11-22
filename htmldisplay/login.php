@@ -36,7 +36,7 @@
 			<label for="pwd">Password:</label>
 			<input type="password" class="form-control" id="password" placeholder="Password" name="password">
 		</div>
-		<input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Register" id="butsave">
+		<input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Submit" id="butsave">
 	</form>
 
 </div>

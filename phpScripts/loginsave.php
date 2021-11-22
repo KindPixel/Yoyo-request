@@ -1,5 +1,4 @@
 <?php
-	require '../database/database.php';
 	require '../database/singleton.php';
 	session_start();
 	if($_POST['type']==1){
