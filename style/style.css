@@ -69,3 +69,13 @@ body {
   margin:auto;
   width:60%;
 }
+
+.asking-box label {
+  color:white;
+}
+
+.form h2 {
+  color:white;
+  margin-top:50px;
+  margin-bottom: 25px;
+}
