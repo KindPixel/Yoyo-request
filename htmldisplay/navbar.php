@@ -24,10 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="askuryoyo.php">Ask ur yoyo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="requestlist.php">List request</a>
                 </li>
                 
                 <?php if(!isset($_SESSION['name'])) {
