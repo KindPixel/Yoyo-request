@@ -6,15 +6,15 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
 {
     //For Load All Data
     if ($_POST["action"] == "Load") {
-        $statement = $connection->prepare("SELECT * FROM customers ORDER BY id DESC");
+        $statement = $pdo->prepare("SELECT * FROM request ORDER BY id DESC");
         $statement->execute();
         $result = $statement->fetchAll();
         $output = '';
         $output .= '
    <table class="table table-bordered">
     <tr>
-     <th width="40%">First Name</th>
-     <th width="40%">Last Name</th>
+     <th width="40%">User name</th>
+     <th width="40%">Movie</th>
      <th width="10%">Update</th>
      <th width="10%">Delete</th>
     </tr>
@@ -23,8 +23,8 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
             foreach ($result as $row) {
                 $output .= '
     <tr>
-     <td>' . $row["first_name"] . '</td>
-     <td>' . $row["last_name"] . '</td>
+     <td>' . $row["name"] . '</td>
+     <td>' . $row["request"] . '</td>
      <td><button type="button" id="' . $row["id"] . '" class="btn btn-warning btn-xs update">Update</button></td>
      <td><button type="button" id="' . $row["id"] . '" class="btn btn-danger btn-xs delete">Delete</button></td>
     </tr>
@@ -43,7 +43,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
 
     //This code for Create new Records
     if ($_POST["action"] == "Create") {
-        $statement = $connection->prepare("
+        $statement = $pdo->prepare("
    INSERT INTO customers (first_name, last_name) 
    VALUES (:first_name, :last_name)
   ");
@@ -61,7 +61,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
     //This Code is for fetch single customer data for display on Modal
     if ($_POST["action"] == "Select") {
         $output = array();
-        $statement = $connection->prepare(
+        $statement = $pdo->prepare(
             "SELECT * FROM customers 
    WHERE id = '" . $_POST["id"] . "' 
    LIMIT 1"
@@ -76,7 +76,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
     }
 
     if ($_POST["action"] == "Update") {
-        $statement = $connection->prepare(
+        $statement = $pdo->prepare(
             "UPDATE customers 
    SET first_name = :first_name, last_name = :last_name 
    WHERE id = :id
@@ -95,7 +95,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
     }
 
     if ($_POST["action"] == "Delete") {
-        $statement = $connection->prepare(
+        $statement = $pdo->prepare(
             "DELETE FROM customers WHERE id = :id"
         );
         $result = $statement->execute(
