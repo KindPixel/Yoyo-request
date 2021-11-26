@@ -9,10 +9,12 @@
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<?php if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
-    // session isn't started
-    session_start();
-}?>
+<?php 
+    if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+        // session isn't started
+        session_start();
+    }
+?>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-1">
     <div class="container-fluid">
