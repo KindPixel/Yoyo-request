@@ -44,13 +44,13 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
     //This code for Create new Records
     if ($_POST["action"] == "Create") {
         $statement = $pdo->prepare("
-   INSERT INTO customers (first_name, last_name) 
-   VALUES (:first_name, :last_name)
+   INSERT INTO request (name, request) 
+   VALUES (:name, :request)
   ");
         $result = $statement->execute(
             array(
-                ':first_name' => $_POST["firstName"],
-                ':last_name' => $_POST["lastName"]
+                ':name' => $_POST["name"],
+                ':request' => $_POST["request"]
             )
         );
         if (!empty($result)) {
@@ -62,7 +62,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
     if ($_POST["action"] == "Select") {
         $output = array();
         $statement = $pdo->prepare(
-            "SELECT * FROM customers 
+            "SELECT * FROM request 
    WHERE id = '" . $_POST["id"] . "' 
    LIMIT 1"
         );
@@ -77,15 +77,15 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
 
     if ($_POST["action"] == "Update") {
         $statement = $pdo->prepare(
-            "UPDATE customers 
-   SET first_name = :first_name, last_name = :last_name 
-   WHERE id = :id
-   "
+            "UPDATE request 
+            SET name = :name, request = :request 
+            WHERE id = :id
+            "
         );
         $result = $statement->execute(
             array(
-                ':first_name' => $_POST["firstName"],
-                ':last_name' => $_POST["lastName"],
+                ':name' => $_POST["firstName"],
+                ':request' => $_POST["lastName"],
                 ':id'   => $_POST["id"]
             )
         );
@@ -96,7 +96,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
 
     if ($_POST["action"] == "Delete") {
         $statement = $pdo->prepare(
-            "DELETE FROM customers WHERE id = :id"
+            "DELETE FROM request WHERE id = :id"
         );
         $result = $statement->execute(
             array(

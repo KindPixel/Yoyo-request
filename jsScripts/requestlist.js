@@ -17,26 +17,26 @@ $(document).ready(function () {
     //This JQuery code will Reset value of Modal item when modal will load for create new records
     $("#modal_button").click(function () {
         $("#customerModal").modal("show"); //It will load modal on web page
-        $("#first_name").val(""); //This will clear Modal first name textbox
-        $("#last_name").val(""); //This will clear Modal last name textbox
+        $("#name").val(""); //This will clear Modal first name textbox
+        $("#Request").val(""); //This will clear Modal last name textbox
         $(".modal-title").text("Create New Records"); //It will change Modal title to Create new Records
         $("#action").val("Create"); //This will reset Button value ot Create
     });
 
     //This JQuery code is for Click on Modal action button for Create new records or Update existing records. This code will use for both Create and Update of data through modal
     $("#action").click(function () {
-        var firstName = $("#first_name").val(); //Get the value of first name textbox.
-        var lastName = $("#last_name").val(); //Get the value of last name textbox
+        var Name = $("#name").val(); //Get the value of first name textbox.
+        var Request = $("#request").val(); //Get the value of last name textbox
         var id = $("#customer_id").val(); //Get the value of hidden field customer id
         var action = $("#action").val(); //Get the value of Modal Action button and stored into action variable
-        if (firstName != "" && lastName != "") {
+        if (Name != "" && Request != "") {
             //This condition will check both variable has some value
             $.ajax({
                 url: "../phpScripts/requestlist.php", //Request send to "action.php page"
                 method: "POST", //Using of Post method for send data
                 data: {
-                    firstName: firstName,
-                    lastName: lastName,
+                    name: name,
+                    request: request,
                     id: id,
                     action: action,
                 }, //Send data to server
@@ -65,8 +65,8 @@ $(document).ready(function () {
                 $(".modal-title").text("Update Records"); //This code will change this class text to Update records
                 $("#action").val("Update"); //This code will change Button value to Update
                 $("#customer_id").val(id); //It will define value of id variable to this customer id hidden field
-                $("#first_name").val(data.first_name); //It will assign value to modal first name texbox
-                $("#last_name").val(data.last_name); //It will assign value of modal last name textbox
+                $("#name").val(data.name); //It will assign value to modal first name texbox
+                $("#request").val(data.request); //It will assign value of modal last name textbox
             },
         });
     });
