@@ -41,8 +41,6 @@
 		
 	}
 
-
-	
 	if($_POST['type']==2){
 		$email=$_POST['email'];
 		$password=$_POST['password'];
@@ -57,6 +55,7 @@
 				$_SESSION['email']=$email;
 				$_SESSION['name']=$users['name'];
 				$_SESSION['id']=$users['id'];
+				$_SESSION['loggedin'] = true;
 				echo 200;
 			}
 			else {

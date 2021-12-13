@@ -13,6 +13,10 @@
     if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
         // session isn't started
         session_start();
+        $_SESSION['loggedin'] = false;
+    }
+    else {
+        
     }
     var_dump($_SESSION);
 ?>
@@ -35,11 +39,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="requestlist.php">List request</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login/Register</a>
-                </li>
                 
-                <?php if(!isset($_SESSION['name'])) {
+                <?php if($_SESSION['loggedin'] == false) {
                     echo'
                     <li class="nav-item">
                         <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i></a>

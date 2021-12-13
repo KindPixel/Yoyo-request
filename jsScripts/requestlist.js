@@ -16,22 +16,25 @@ $(document).ready(function () {
 
     //This JQuery code is for Delete customer data. If we have click on any customer row delete button then this code will execute
     $(document).on("click", ".delete", function () {
-        var id = $(this).attr("id"); //This code will fetch any customer id from attribute id with help of attr() JQuery method
-        if (confirm("Are you sure you want to remove this data?")) {
-            //Confim Box if OK then
-            var action = "Delete"; //Define action variable value Delete
-            $.ajax({
-                url: "phpScripts/requestlist.php", //Request send to "action.php page"
-                method: "POST", //Using of Post method for send data
-                data: { id: id, action: action }, //Data send to server from ajax method
-                success: function (data) {
-                    fetchUser(); // fetchUser() function has been called and it will load data under divison tag with id result
-                    alert(data); //It will pop up which data it was received from server side
-                },
-            });
-        } //Confim Box if cancel then
-        else {
-            return false; //No action will perform
-        }
+        var answer = window.confirm("u sure u want to del");
+        var id = $(this).attr("id");
+        console.log(answer);
+        
+        // console.log("id clicked: " + id);
+   
+        // if() {
+        //     $.ajax({
+        //         url: "phpScripts/requestlist.php",
+        //         method: "POST",
+        //         data: { id: id, action: "Delete" },
+        //         success: function (data) {
+        //             fetchUser();
+        //             alert(data);
+        //         },
+        //     });
+        // }
+        // else {
+        //     return false;
+        // }
     });
 });
