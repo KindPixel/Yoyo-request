@@ -19,7 +19,7 @@ $(document).ready(function() {
 		var password = $('#password').val();
 		if(name!="" && email!="" && phone!="" && password!="" ){
 			$.ajax({
-				url: "../phpScripts/loginsave.php",
+				url: "phpScripts/loginsave.php",
 				type: "POST",
 				data: {
 					type: 1,
@@ -57,7 +57,7 @@ $(document).ready(function() {
 		var password = $('#password_log').val();
 		if(email!="" && password!="" ){
 			$.ajax({
-				url: "../phpScripts/loginsave.php",
+				url: "phpScripts/loginsave.php",
 				type: "POST",
 				data: {
 					type:2,
@@ -69,7 +69,7 @@ $(document).ready(function() {
 					statusCode = dataResult.substr(dataResult.length - 3);
 					if(statusCode==200){
 						console.log("sucess");  
-						document.location.href = "../htmldisplay/index.php";                 					
+						document.location.href = "index.php";                 					
 					}
 					if(statusCode==201){
 						$("#error").show();
