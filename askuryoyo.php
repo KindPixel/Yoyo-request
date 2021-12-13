@@ -1,9 +1,9 @@
-<?php include('./navbar.php');?>
+<?php include('navbar.php');?>
 <head>
     <meta charset="utf-8">
     <title>Ask ur yoyo</title>
 </head>
-<script type="text/javascript" src="../jsScripts/askuryoyo.js"></script>
+<script type="text/javascript" src="jsScripts/askuryoyo.js"></script>
 <body>
     
 

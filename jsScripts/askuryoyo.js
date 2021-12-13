@@ -3,7 +3,7 @@ $(document).ready(function() {
 		var request = $('#request').val();
 		if(request!=""){
 			$.ajax({
-				url: "../phpScripts/askprocess.php",
+				url: "phpScripts/askprocess.php",
 				type: "POST",
 				data: {
 					request: request,					
